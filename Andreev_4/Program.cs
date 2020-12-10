@@ -18,6 +18,7 @@ namespace Andreev_4
             double n = double.Parse(Console.ReadLine().Replace(".", ","));
 
             int sign = 1;
+            double x_pow = x;
 
             double yfib1 = y;
             double yfib2 = y;
@@ -28,20 +29,19 @@ namespace Andreev_4
             double tgy_i = Math.Tan(y);
             double tgy = tgy_i;
 
-            double x_pow = x;
-
             double A = 0.0;
             for (int i = 0; i < n; i++)
             {
                 A += sign * yfib1 * yfib2 * Math.Sin(fact) / (tgy + Math.Pow(x_pow, i + 1));
                 Console.WriteLine($"A(n={i}) = {A:F8}");
-                sign *= -1;
 
+                sign *= -1;
+                fact *= fact_i;
+                
                 double yfib = yfib1 * yfib2;
+
                 yfib1 = yfib2;
                 yfib2 = yfib;
-
-                fact *= fact_i;
 
                 tgy *= tgy_i;
                 x_pow *= x;
