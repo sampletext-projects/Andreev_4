@@ -37,6 +37,7 @@ namespace Andreev_4
 
                 sign *= -1;
                 fact *= fact_i;
+                fact_i++;
                 
                 double yfib = yfib1 * yfib2;
 
